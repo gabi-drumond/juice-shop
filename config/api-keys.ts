@@ -1,0 +1,47 @@
+// API Configuration - DO NOT COMMIT (fake secrets for GHAS demo)
+
+// GitHub Personal Access Token
+const GITHUB_TOKEN = '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'
+
+// AWS Credentials
+const AWS_ACCESS_KEY_ID = 'AKIAIOSFODNN7EXAMPLE'
+const AWS_SECRET_ACCESS_KEY = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+
+// Azure Storage Key
+const AZURE_STORAGE_KEY = 'DefaultEndpointsProtocol=https;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;EndpointSuffix=core.windows.net'
+
+// Slack Bot Token
+const SLACK_BOT_TOKEN = 'xoxb-123456789012-1234567890123-AbCdEfGhIjKlMnOpQrStUvWx'
+
+// Discord Webhook
+const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/123456789012345678/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789-_'
+
+// OpenAI API Key
+const OPENAI_API_KEY = 'sk-proj-abcdefghijklmnopqrstuvwxyz123456789ABCDEFGHIJKLMNOP'
+
+// Mailchimp API Key
+const MAILCHIMP_API_KEY = 'abc123def456ghi789jkl012mno345-us21'
+
+// Shopify Access Token
+const SHOPIFY_ACCESS_TOKEN = 'shpat_abc123def456ghi789jkl012mno345pq'
+
+// Private Key (RSA)
+const PRIVATE_KEY = `-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEA0Z3VS5JJcds3xfn/ygWyF8PbnGy0AHB7MiU7B7VkfPviYBvp
+oLIWAKCenRm8GKfP1PsUWBJxCf4dR3BHJonbVsgzq9sYnDyGvfD7Fq5UXlVh7VFN
+4NPZlNvPQa9FJy8vPlER3k3ZD1MvYoJqM7VGBKsWpG8N7h0fKNSPBPpC5SKWPT91
+fake12345678901234567890123456789012345678901234567890123456789012
+-----END RSA PRIVATE KEY-----`
+
+export {
+  GITHUB_TOKEN,
+  AWS_ACCESS_KEY_ID,
+  AWS_SECRET_ACCESS_KEY,
+  AZURE_STORAGE_KEY,
+  SLACK_BOT_TOKEN,
+  DISCORD_WEBHOOK,
+  OPENAI_API_KEY,
+  MAILCHIMP_API_KEY,
+  SHOPIFY_ACCESS_TOKEN,
+  PRIVATE_KEY
+}
