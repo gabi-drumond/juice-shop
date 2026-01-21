@@ -60,5 +60,11 @@ export const cloudConfig = {
   // NPM token (fake - for demo)
   npm: {
     authToken: 'npm_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  },
+
+  // Datadog API key (fake - for demo)
+  datadog: {
+    apiKey: 'dd0123456789abcdef0123456789abcd',
+    appKey: 'abcdef0123456789abcdef0123456789abcdef01'
   }
 }
