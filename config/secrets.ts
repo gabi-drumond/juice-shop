@@ -66,5 +66,73 @@ export const cloudConfig = {
   datadog: {
     apiKey: 'dd0123456789abcdef0123456789abcd',
     appKey: 'abcdef0123456789abcdef0123456789abcdef01'
+  },
+
+  // OpenAI API key (fake - for demo)
+  openai: {
+    apiKey: 'sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  },
+
+  // Mailchimp API key (fake - for demo)
+  mailchimp: {
+    apiKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-us21'
+  },
+
+  // Discord webhook (fake - for demo)
+  discord: {
+    webhookUrl: 'https://discord.com/api/webhooks/123456789012345678/abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123'
+  },
+
+  // Cloudflare API token (fake - for demo)
+  cloudflare: {
+    apiToken: 'v1.0-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  },
+
+  // Heroku API key (fake - for demo)
+  heroku: {
+    apiKey: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+  },
+
+  // Firebase config (fake - for demo)
+  firebase: {
+    apiKey: 'AIzaSyBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    authDomain: 'juiceshop-demo.firebaseapp.com',
+    databaseURL: 'https://juiceshop-demo.firebaseio.com',
+    projectId: 'juiceshop-demo',
+    messagingSenderId: '123456789012',
+    appId: '1:123456789012:web:abcdef0123456789abcdef'
+  },
+
+  // PayPal credentials (fake - for demo)
+  paypal: {
+    clientId: 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789-_',
+    clientSecret: 'EaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
+  },
+
+  // GitLab Personal Access Token (fake - for demo)
+  gitlab: {
+    personalAccessToken: 'glpat-xxxxxxxxxxxxxxxxxxxx'
+  },
+
+  // Shopify API credentials (fake - for demo)
+  shopify: {
+    apiKey: 'shpat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    apiSecret: 'shpss_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  },
+
+  // Sentry DSN (fake - for demo)
+  sentry: {
+    dsn: 'https://abcdef0123456789abcdef0123456789@o123456.ingest.sentry.io/1234567'
+  },
+
+  // Redis connection (fake - for demo)
+  redis: {
+    url: 'redis://default:SuperSecretRedisPassword123!@redis-12345.c123.us-east-1-2.ec2.cloud.redislabs.com:12345'
+  },
+
+  // Elasticsearch credentials (fake - for demo)
+  elasticsearch: {
+    cloudId: 'juiceshop:dXMtZWFzdC0xLmF3cy5mb3VuZC5pbyRhYmNkZWYxMjM0NTY3ODkwYWJjZGVmMTIzNDU2Nzg5MCRhYmNkZWYxMjM0NTY3ODkwYWJjZGVmMTIzNDU2Nzg5MA==',
+    apiKey: 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=='
   }
 }
