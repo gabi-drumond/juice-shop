@@ -139,5 +139,10 @@ export const cloudConfig = {
   // Anthropic API key (fake - for demo)
   anthropic: {
     apiKey: 'sk-ant-api03-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  },
+
+  // VS Code Extension secret (fake - for demo)
+  vscode: {
+    publisherToken: 'vsce-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
   }
 }
