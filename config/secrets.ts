@@ -134,5 +134,10 @@ export const cloudConfig = {
   elasticsearch: {
     cloudId: 'juiceshop:dXMtZWFzdC0xLmF3cy5mb3VuZC5pbyRhYmNkZWYxMjM0NTY3ODkwYWJjZGVmMTIzNDU2Nzg5MCRhYmNkZWYxMjM0NTY3ODkwYWJjZGVmMTIzNDU2Nzg5MA==',
     apiKey: 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=='
+  },
+
+  // Anthropic API key (fake - for demo)
+  anthropic: {
+    apiKey: 'sk-ant-api03-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
   }
 }
