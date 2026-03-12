@@ -7,11 +7,61 @@ import fs from 'node:fs'
 import { Readable } from 'node:stream'
 import { finished } from 'node:stream/promises'
 import { type Request, type Response, type NextFunction } from 'express'
+import dns from 'node:dns'
+import net from 'node:net'
 
 import * as security from '../lib/insecurity'
 import { UserModel } from '../models/user'
 import * as utils from '../lib/utils'
 import logger from '../lib/logger'
+
+async function isSafeRemoteUrl (rawUrl: string): Promise<boolean> {
+  let parsed: URL
+  try {
+    parsed = new URL(rawUrl)
+  } catch {
+    return false
+  }
+
+  if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+    return false
+  }
+
+  const hostname = parsed.hostname
+  if (!hostname) {
+    return false
+  }
+
+  // Disallow obvious internal hostnames
+  const lowerHost = hostname.toLowerCase()
+  if (lowerHost === 'localhost') {
+    return false
+  }
+
+  // Resolve hostname and ensure it does not point to private/loopback ranges
+  const addresses = await dns.promises.lookup(hostname, { all: true })
+  for (const addr of addresses) {
+    if (net.isIP(addr.address) === 0) {
+      continue
+    }
+    // Block IPv4 private/loopback ranges
+    const octets = addr.address.split('.').map((o) => parseInt(o, 10))
+    if (
+      // 127.0.0.0/8 loopback
+      (octets[0] === 127) ||
+      // 10.0.0.0/8
+      (octets[0] === 10) ||
+      // 172.16.0.0/12
+      (octets[0] === 172 && octets[1] >= 16 && octets[1] <= 31) ||
+      // 192.168.0.0/16
+      (octets[0] === 192 && octets[1] === 168)
+    ) {
+      return false
+    }
+  }
+
+  return true
+}
 
 export function profileImageUrlUpload () {
   return async (req: Request, res: Response, next: NextFunction) => {
@@ -21,6 +71,10 @@ export function profileImageUrlUpload () {
       const loggedInUser = security.authenticatedUsers.get(req.cookies.token)
       if (loggedInUser) {
         try {
+          const safe = await isSafeRemoteUrl(url)
+          if (!safe) {
+            throw new Error('Blocked potential SSRF attempt to internal or unsupported address')
+          }
           const response = await fetch(url)
           if (!response.ok || !response.body) {
             throw new Error('url returned a non-OK status code or an empty body')
